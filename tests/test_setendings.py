@@ -69,12 +69,12 @@ class TestEndingLocations(unittest.TestCase):
         module = self.get_file_as_module(PATH + 'AssignAttr.py')
         self.set_and_check(module, astroid.AssignAttr, expected)
 
-    # def test_assignname(self):
-    #     """
-    #     """
-    #     expected = [(1, 1, 0, 5)]
-    #     module = self.get_file_as_module(PATH + 'AssignName.py')
-    #     self.set_and_check(module, astroid.Assign, expected)
+    def test_assignname(self):
+        """
+        """
+        expected = [(1, 1, 0, 5), (2, 2, 0, 10), (3, 3, 0, 13)]
+        module = self.get_file_as_module(PATH + 'AssignName.py')
+        self.set_and_check(module, astroid.Assign, expected)
 
     def test_asyncfor(self):
         """Note: col_offset property always set after the 'async' keyword.
